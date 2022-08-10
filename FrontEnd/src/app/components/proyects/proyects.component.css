@@ -1,0 +1,10 @@
+.container-fluid{
+    background-color: tomato;
+    padding: 20px;
+}
+img{
+    width: 100%;
+}
+.row{
+    margin-top: 10px;
+}

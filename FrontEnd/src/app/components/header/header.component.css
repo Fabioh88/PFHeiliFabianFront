@@ -1,0 +1,10 @@
+.container-fluid{
+    background-color: tomato;
+}
+app-social{
+    float: right;
+}
+#ingreso{
+    text-align: center;
+    margin-top: 20px;
+}

@@ -4,7 +4,8 @@
             <app-logo></app-logo>
         </div>
         <div class="col-4"  id="ingreso">
-            <button type="button" class="btn btn-outline-ligth">LOG IN</button>
+            <button type="button" class="btn btn-outline-ligth" (click)="login()" *ngIf="!isLogged">LOGIN</button>
+            <button type="button" class="btn btn-outline-ligth" (click)="onLogout()" *ngIf="isLogged">LOGOUT</button>
         </div>
         <div class="col-4">
             <app-social></app-social>

@@ -1,26 +1,30 @@
 <div class="container-fluid">
     <div class="row">
         <h1>Experiencia Laboral</h1>
-        <div class="col-1"></div>
-        <div class="col-11">
-            <ul>
-                <li>
-                    <h2>--Trabajo--</h2><h3>--años--</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eveniet suscipit esse commodi! Adipisci modi assumenda voluptatum voluptatibus id perferendis facilis esse, neque cum. Voluptas quaerat placeat iure dignissimos reprehenderit?</p>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <h2>--Trabajo--</h2><h3>--años--</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eveniet suscipit esse commodi! Adipisci modi assumenda voluptatum voluptatibus id perferendis facilis esse, neque cum. Voluptas quaerat placeat iure dignissimos reprehenderit?</p>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <h2>--Trabajo--</h2><h3>--años--</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eveniet suscipit esse commodi! Adipisci modi assumenda voluptatum voluptatibus id perferendis facilis esse, neque cum. Voluptas quaerat placeat iure dignissimos reprehenderit?</p>
-                </li>
-            </ul>
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaexperiencia" *ngIf="isLogged">
+                Nueva Experiencia
+            </button>
         </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10"> 
+            <table class="table">
+                <tr *ngFor="let Experiencia of experiencia">
+                    <td>{{Experiencia.nombreE}}</td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-dark" routerLink="/editexperiencia/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-square"></i>Editar
+                        </button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-dark" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-eraser-fill"></i>Borrar
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-1"></div>
     </div>
 </div>

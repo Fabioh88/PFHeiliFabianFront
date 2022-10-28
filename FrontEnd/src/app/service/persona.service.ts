@@ -7,11 +7,26 @@ import { persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL='http://localhost:8080/personas/'
+  url='https://backendfah.herokuapp.com/personas/'
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  public Getpersona(): Observable<persona> {
-    return this.http.get<persona>(this.URL+'traer/perfil');
+  public lista(): Observable<persona[]>{
+    return this.httpClient.get<persona[]>(this.url+'lista');
   }
+
+  public detail(id:number): Observable<persona>{
+    return this.httpClient.get<persona>(this.url+`detail/${id}`);
+  }
+  public save (persona: persona): Observable<any>{
+    return this.httpClient.post<any>(this.url+'crear',persona);
+  }
+  public update (id: number, persona: persona): Observable<any>{
+    return this.httpClient.put<any>(this.url+`update/${id}`,persona);
+  }
+  public delete (id: number): Observable<any>{
+    return this.httpClient.delete<any>(this.url+`delete/${id}`);
+  }
+ 
+ 
 }

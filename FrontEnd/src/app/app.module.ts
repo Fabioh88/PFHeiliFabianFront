@@ -26,6 +26,10 @@ import { NeweducacionComponent } from './components/education/neweducacion.compo
 import { EditeducacionComponent } from './components/education/editeducacion.component';
 import { EditskillComponent } from './components/skills/editskill.component';
 import { NewskillComponent } from './components/skills/newskill.component';
+import { EditaboutComponent } from './components/about/editabout.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,8 @@ import { NewskillComponent } from './components/skills/newskill.component';
     NeweducacionComponent,
     EditeducacionComponent,
     EditskillComponent,
-    NewskillComponent
+    NewskillComponent,
+    EditaboutComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,9 @@ import { NewskillComponent } from './components/skills/newskill.component';
     [RoundProgressModule],
     NgCircleProgressModule.forRoot({}),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

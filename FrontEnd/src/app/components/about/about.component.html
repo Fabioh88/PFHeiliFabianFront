@@ -1,13 +1,18 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="col-lg-3">
+            <button type="button" class="btn btn-dark" routerLink="/editabout/1" *ngIf="isLogged">
+                Editar
+            </button>
+        </div>
         <div class="col-sm-12 col-md-6 col-lg-3" id="foto">
-            <img src="../../../assets/perfil.png" alt="">
+            <img src={{persona.img}} alt="">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-9">
             <h1 class="nombre">{{persona.nombre}} {{persona.apellido}}</h1>
             <h3 class="titulo">Web Developer Full Stack Junior</h3>
             <h1 class="acerca">Acerca de Mí</h1>
-            <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum vel totam dolore odit non impedit corporis, a, nulla, ab mollitia nisi deserunt repellendus sed minima possimus quibusdam quos laudantium!</p>
+            <p class="descripcion">{{persona.descripcion}}</p>
         </div>
     </div>
 </div>

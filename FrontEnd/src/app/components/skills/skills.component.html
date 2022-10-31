@@ -1,21 +1,33 @@
 <div class="container-fluid">
     <div class="row">
-        <h1>Skills</h1>
-        <div class="col-lg-3">
-            <button type="button" class="btn btn-dark" routerLink="/nuevaskill" *ngIf="isLogged">
+        <div class="col-12">
+            <h1>Skills</h1>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <button type="button" class="btn btn-danger" routerLink="/nuevaskill" *ngIf="isLogged">
                 Agregar Skill
             </button>
         </div>
-        <div class="col-9"></div>
-        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let skill of skill">
+        <div class="col-sm-12 col-md-9 col-lg-9"></div>
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let skill of skill" id="cuadro">
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" routerLink="/editskill/{{skill.id}}">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+        </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(skill.id)">
+                <i class="bi bi-eraser-fill"></i>
+            </button>
+        </td>
             <circle-progress 
             [percent]="(skill.porcentaje)"
             [radius]="100"
             [imageSrc]="''"
             [title]="(skill.nombre)"
-            [titleColor]=""
-            [showTitle]="false"
-            [showImage]="true"
+            [titleColor]="'tomato'"
+            [showTitle]="true"
+            [showImage]="false"
             [imageWidth]="60"
             [imageHeight]="60"
             [showSubtitle]="false"
@@ -26,17 +38,6 @@
             [animation]="true"
             [animationDuration]="1200">
             </circle-progress>
-            <td *ngIf="isLogged">
-                <button class="btn btn-dark" routerLink="/editskill/{{skill.id}}">
-                <i class="bi bi-pencil-square"></i>Editar
-            </button>
-        </td>
-        <td *ngIf="isLogged">
-            <button class="btn btn-dark" (click)="delete(skill.id)">
-                <i class="bi bi-eraser-fill"></i>Borrar
-            </button>
-        </td>
         </div>
-        
     </div>
 </div>

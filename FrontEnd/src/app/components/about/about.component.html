@@ -1,17 +1,19 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-sm-12 col-md-6 col-lg-3">
             <button type="button" class="btn btn-dark" routerLink="/editabout/1" *ngIf="isLogged">
-                Editar
+                <i class="bi bi-pencil-square"></i>
             </button>
         </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-3" id="foto">
             <img src={{persona.img}} alt="">
         </div>
         <div class="col-sm-12 col-md-6 col-lg-9">
             <h1 class="nombre">{{persona.nombre}} {{persona.apellido}}</h1>
             <h3 class="titulo">Web Developer Full Stack Junior</h3>
-            <h1 class="acerca">Acerca de Mí</h1>
+            <p class="descripcion">Soy actualmente un estudiante de Análisis de Sistemas, en la Universidad Autónoma de Entre Ríos, carrera en la que tengo aprobado primer año y algunas materias de segundo. Aprobada la primera etapa del curso Argentina Programa, brindado por el Ministerio de Desarrollo Productivo me encuentro presentando el Proyecto Final de la segunda etapa de Argentina programa brindado por el INTI con perfil de Web Developer Full-Stack.</p>
             <p class="descripcion">{{persona.descripcion}}</p>
         </div>
     </div>

@@ -12,7 +12,8 @@ export const environment = {
     authDomain: 'frontendfah.firebaseapp.com',
     messagingSenderId: '67206510661',
   },
-  production: false
+  production: false,
+  
 };
 
 /*
